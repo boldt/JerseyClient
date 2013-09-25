@@ -8,7 +8,7 @@ public class JerseyClient {
 	public static void main(String[] args) {
 		Client client = Client.create();
 		WebResource webResource = client.resource("http://localhost:11111/helloworld");
-		String result = webResource.get(String.class);
+		String result = webResource.accept("text/plain").get(String.class);
 		System.out.println(result);
 	}
 }
